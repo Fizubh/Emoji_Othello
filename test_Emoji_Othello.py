@@ -1,8 +1,8 @@
-import pytest
+import pytest # pip install pytest
 import random
 
-from project import opposite_disc, game_board, find_position_ID, find_direction, find_next_empty, find_playable_moves, bot
-from project import choose_color, choose_move, flip_opponent, remove_playable, set_playable
+from Emoji_Othello import opposite_disc, game_board, find_position_ID, find_direction, find_next_empty, find_playable_moves, bot
+from Emoji_Othello import choose_color, choose_move, flip_opponent, remove_playable, set_playable
 
 
 #For my own testing. Not project requirement.
