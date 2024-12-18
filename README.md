@@ -28,7 +28,7 @@ a player gets more than one turn.
 
 A disc may outflank any number of discs in one or more rows. A row is
 defined as a straight line horizonal, vertical, or diagonal in which a
-disc is able to outflank from a play position.
+disc is able to outflank from a played position.
 </pre>
 ![PNG example of a single disc (white) flipping multiple rows](images/Image3.png)
 <pre>

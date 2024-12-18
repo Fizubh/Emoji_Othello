@@ -3,7 +3,7 @@ import string #ascii_uppercase
 import sys
 
 
-class game_board:
+class GameBoard:
     def __init__(self):
         self.white = "⚪"
         self.black = "⚫"
@@ -108,7 +108,7 @@ def main():
     print("\n\nWelcome to Emoji OTHELLO!\nFlip your opponent's pieces!\nGame ends when BOTH players have no playable moves.\nPlayer with the most pieces wins!\nGood Luck!")
 
     #Game setup
-    board = game_board()
+    board = GameBoard()
     board.setup_othello()
     print(board)
 
@@ -277,7 +277,7 @@ def find_next_empty(board, start_coordinate, direction):
 #Returns a list of the position(s) ID "A1" through "H8" given a coordinate [x,y] where x is the row and y is the column on the board
 #Accepts a single [x, y] or a list of [[x1,y1],[x2,y2],...]
 def find_position_ID(list) -> str:
-    table = game_board()
+    table = GameBoard()
     output = ""
     if is_list_of_lists(list):
         for position in list:
@@ -337,53 +337,3 @@ def set_playable(board, list):
 
 if __name__ == "__main__":
     main()
-
-
-
-"""
-Othello:            8x8 board. Tradional colors black vs white. Black moves first.
-Game objective:     The side with the must colors wins.
-
-Rules: Game starts with two white and two black pieces placed in an diagonal position:   ->   ⚪⚫
-                                                                                              ⚫⚪
-
-A move consists of "outflanking" your opponent's disc(s), then flipping the outflanked disc(s)
-over to your color.
-
-To outflank means to place a disc so that your opponent's row (or rows) of disc(s) are
-bordered at each end by a disc of your color.
-Example: (green represents a playable position)
-
-            ⚪⚫⚫⚫🟢  ->  ⚪⚫⚫⚫⚪  ->  ⚪⚪⚪⚪⚪
-
-If a player cannot outflank and flip at least one opposing disc, the turn is forfeited and the
-opponent moves again. If both players cannot move then the game is over.
-
-A disc may outflank any number of discs in one or more rows. A row is defined as one or more discs
-in a continuous straight line horizonal, vertical, or diagonally.
-
-You may NOT skip over an empty square or your own color disc to outflank an opposing disc:
-
-Examples:
-This disc may not be placed, it cannot flip the row  ->  🟢⚪⬜⚪⚪⚪⚫
-This disc can flip ony 1 white disc  ->  🟢⚪⚫⚪⚪⚫  ->  ⚫⚫⚫⚪⚪⚫
-
-A disc may outflank in any number of directions at the same time.
-
-A disc may only be outflanked as a direct result of a move and must fall in the direct line of the
-disc placed down:
-
-🟢             ⚫
-⚪             ⚫
-⚪⚪⚪⚫  ->  ⚫⚪⚪⚫
-⚫             ⚫
-
-All discs outflanked in any one move must be flipped, even if it is to the player's
-advantage not to flip them all.
-
-once a disc is placed on a square it cannot be moved
-
-When neither player can move the game is over. Discs are counted player with the most wins.
-
-"""
-

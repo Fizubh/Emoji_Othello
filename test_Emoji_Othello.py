@@ -1,13 +1,13 @@
 import pytest # pip install pytest
 import random
 
-from Emoji_Othello import opposite_disc, game_board, find_position_ID, find_direction, find_next_empty, find_playable_moves, bot
+from Emoji_Othello import opposite_disc, GameBoard, find_position_ID, find_direction, find_next_empty, find_playable_moves, bot
 from Emoji_Othello import choose_color, choose_move, flip_opponent, remove_playable, set_playable
 
 
 #For my own testing. Not project requirement.
-def test_class_game_board():
-    board = game_board()
+def test_class_GameBoard():
+    board = GameBoard()
 
     #Confirm board.setup_othell()
     board.setup_othello()
@@ -51,7 +51,7 @@ def test_class_game_board():
 
 
 def test_bot():
-    board = game_board()
+    board = GameBoard()
     board.place(3, 3, board.white)
     board.place(3, 4, board.black)
     #Logic for bot opponent
@@ -75,7 +75,7 @@ def test_choose_color(monkeypatch):
 
 
 def test_choose_move(monkeypatch):
-    board = game_board()
+    board = GameBoard()
     board.setup_othello()
     #Places a disc (color) on a given board_positions, "A1" through "H8"; Returns the [row, column] of the board_positions choosen
     #Function stub: choose_move(board, color) -> list:
@@ -116,7 +116,7 @@ def test_choose_move(monkeypatch):
 
 
 def test_find_direction():
-    board = game_board()
+    board = GameBoard()
     board.setup_othello()
     #Returns the direction, board.direction, from a position where opposing neighbors of color are located
     #Function stub: find_direction(board, row, column, color) -> str:
@@ -153,7 +153,7 @@ def test_find_direction():
 
 
 def test_find_next_empty():
-    table = game_board()
+    table = GameBoard()
     table.setup_othello()
     #Returns the next available empty coordinate on the board from starting position and direction to search
     #find_next_empty(board, start_coordinate, direction)
@@ -169,7 +169,7 @@ def test_find_next_empty():
 
 
 def test_find_playable_moves():
-    board = game_board()
+    board = GameBoard()
     board.setup_othello()
     #Returns the coordinate(s) of playable moves
     #find_playable_moves(board, color) -> list:
@@ -194,7 +194,7 @@ def test_find_position_ID():
 def test_flip_opponent():
     #Changes the opponent's pieces based on the last_move and color of the opponent.
     #Function stub: flip_opponent(board, last_move, color)
-    board = game_board()
+    board = GameBoard()
 
     board.setup_othello()
     board.place(3,5,board.white)
@@ -258,7 +258,7 @@ def test_opposite_disc():
 def test_remove_playable():
     #Places board.empty where board.green emoji found
     #Function stub: remove_playable(board):
-    board = game_board()
+    board = GameBoard()
     board.board[3][3] = board.green
     board.board[4][4] = board.green
     remove_playable(board)
@@ -269,7 +269,7 @@ def test_remove_playable():
 def test_set_playable():
     #Places board.green emoji on playable locations. Accepts [x, y] or [[x1, y1], [x2, y2],...]
     #Function stub: set_playable(board, list):
-    board = game_board()
+    board = GameBoard()
     set_playable(board, [3,3])
     assert board.board[3][3] == board.green
 
