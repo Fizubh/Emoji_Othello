@@ -1,5 +1,4 @@
 import random
-import string #ascii_uppercase
 import sys
 
 
@@ -50,9 +49,7 @@ class GameBoard:
                 output += f"{position}" #the row
 
         #Print column ID (A-H)
-        output += "\n  "
-        for letter in string.ascii_uppercase[:8]:
-            output += f"{letter} "
+        output += "\n   " + " ".join(chr(65 + i) for i in range(8))
 
         return output
 
