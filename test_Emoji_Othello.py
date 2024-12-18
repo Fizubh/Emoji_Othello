@@ -5,7 +5,6 @@ from Emoji_Othello import opposite_disc, GameBoard, find_position_ID, find_direc
 from Emoji_Othello import choose_color, choose_move, flip_opponent, remove_playable, set_playable
 
 
-#For my own testing. Not project requirement.
 def test_class_GameBoard():
     board = GameBoard()
 

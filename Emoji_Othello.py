@@ -85,11 +85,11 @@ class GameBoard:
             return self.board_positions[row][column]
 
 
-    def find_position(self, ID) -> list:
-        for row in range(8):
-            for column in range(8):
-                if ID == self.board_positions[row][column]:
-                    return [row, column]
+    def find_position(self, ID) -> list:        
+        for row, columns in enumerate(self.board_positions):
+            if ID in columns:
+                return [row, columns.index(ID)]
+        return None
 
 
     def place(self, row, column, emoji):
