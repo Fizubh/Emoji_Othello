@@ -71,10 +71,10 @@ class GameBoard:
 
     def find_emoji(self, emoji) -> list:
         output = []
-        for row in range(8):
-            for column in range(8):
-                if self.board[row][column] == emoji:
-                    output.append([row, column])
+        for row, columns in enumerate(self.board):
+            for col, value in enumerate(columns):
+                if value == emoji:
+                    output.append([row, col])
         return output
 
 
