@@ -47,6 +47,10 @@ def test_class_GameBoard():
     board.place(7, 7, board.white)
     assert board.board[0][0] == board.black
     assert board.board[7][7] == board.white
+    with pytest.raises(ValueError):
+        board.place(-1,-1,board.black)
+    with pytest.raises(ValueError):
+        board.place(8,8,board.white)
 
 
 def test_bot():

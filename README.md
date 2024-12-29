@@ -3,14 +3,11 @@
 <pre>
 Othello is played on a 8x8 board like chess or checkers.
 
-The goal is to have the most discs in your color at the end
-of the game.
+The goal is to have the most discs in your color at the end of the game.
 
-The game ends when there are no more playable moves for BOTH
-players.
+The game ends when there are no more playable moves for BOTH players.
 
-Black moves first. The board starts as shown in the following
-image.
+Black moves first. The board starts as shown in the following image.
 </pre>
 ![PNG of a traditional othello game setup](images/Image1.png)
 <pre>

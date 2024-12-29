@@ -90,7 +90,10 @@ class GameBoard:
 
 
     def place(self, row, column, emoji):
-        self.board[row][column] = emoji
+        if 0 <= row < 8 and 0 <= column < 8:
+            self.board[row][column] = emoji
+        else:
+            raise ValueError("Invalid position")
 
 
     def setup_othello(self):
