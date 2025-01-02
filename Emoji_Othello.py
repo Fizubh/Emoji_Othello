@@ -185,6 +185,8 @@ def choose_move(board, color) -> list:
     while turn:
         try:
             move = input("Choose your move 🟢 are playable positions (Ctrl + C to stop): ").upper()
+            if len(move) != 2 or move[0] not in "ABCDEFGH" or not move[1].isdigit():
+                print("Invalid input. Choose the column then the row, example: F7")
         except KeyboardInterrupt:
             sys.exit("\nGame Stopped")
         if move == '':

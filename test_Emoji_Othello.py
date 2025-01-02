@@ -116,7 +116,7 @@ def test_choose_move(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 'd3')
     assert choose_move(board, "⚪") == [5, 3]
     assert board.board[5][3] == "⚪"
-
+    
 
 def test_find_direction():
     board = GameBoard()
