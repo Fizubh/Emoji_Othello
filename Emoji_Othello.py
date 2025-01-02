@@ -39,19 +39,10 @@ class GameBoard:
 
     def __str__(self):
         output = ""
-        row_number = 8
-
-        #Print row ID (8-1) and the row
-        for row in self.board:
-            output += f"\n{row_number} " #row ID
-            row_number -= 1
-            for position in row:
-                output += f"{position}" #the row
-
-        #Print column ID (A-H)
-        output += "\n   " + " ".join(chr(65 + i) for i in range(8))
-
-        return output
+        for i, row in enumerate(self.board):
+            output += f"{8 - i} " + "".join(row) + "\n"
+        output += "   " + " ".join("ABCDEFGH")
+        return output        
 
 
     def clear(self):
