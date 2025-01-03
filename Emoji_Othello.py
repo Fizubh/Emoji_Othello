@@ -284,16 +284,11 @@ def find_position_ID(list) -> str:
 
 #Returns the coordinate(s) of playable moves
 def find_playable_moves(board, color) -> list:
-    output = list()
-    positions = board.find_emoji(color)
-    for pos in positions:
-        #Determine search direction(s)
-        search_for = find_direction(board, pos[0], pos[1], color).split()
-        for direction in search_for:
-            found = find_next_empty(board, pos, direction) #Returns None if none found
-            if found: #If not None add the position to list
-                output.append(found)
-    return output
+    return [        
+        found for pos in board.find_emoji(color)
+        for direction in find_direction(board, pos[0], pos[1], color).split()
+        if (found := find_next_empty(board, pos, direction))                
+    ]
 
 
 #Utility. Returns true if lst is a list with lists. Applied in function find_position_ID, set_playable
