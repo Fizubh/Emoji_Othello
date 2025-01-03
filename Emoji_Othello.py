@@ -46,9 +46,7 @@ class GameBoard:
 
 
     def clear(self):
-        for row in range(8):
-            for column in range(8):
-                self.board[row][column] = self.empty
+        self.board = [[self.empty for _ in range(8)] for _ in range(8)]        
 
 
     def count(self, emoji) -> int:
